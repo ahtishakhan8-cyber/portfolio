@@ -1,0 +1,33 @@
+/* All design tokens live here. Change a value once, it updates everywhere. */
+:root {
+  --color-primary: #2269e1;
+  --color-primary-dark: #1c56b9;
+  --color-yellow: #f8b318;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #b5b5b5;
+
+  --color-bg: var(--color-white);
+  --color-text: var(--color-black);
+
+  --font-primary: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-urdu: 'Noto Naskh Arabic', 'Jameel Noori Nastaleeq', 'Segoe UI', serif;
+
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+
+  --transition-base: 0.2s ease;
+
+  --shadow-card: 0 4px 15px rgb(0 0 0 / 0.25);
+  --shadow-header: 2px 0 25px rgb(0 0 0 / 0.25);
+
+  --container-width: 1280px;
+
+  /* Reference only: @media rules cannot read CSS variables, so the same
+     numbers are written by hand in the media queries. */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}

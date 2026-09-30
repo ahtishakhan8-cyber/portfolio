@@ -1,0 +1,39 @@
+.word-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  min-width: 0;
+
+  @media (max-width: 768px) {
+    gap: 36px;
+  }
+}
+
+.word-meaning__title {
+  color: var(--color-primary);
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 28px;
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}
+
+.word-meaning__english {
+  font-size: 13px;
+  color: var(--color-black);
+  max-width: 34ch;
+  margin-right: auto;
+  margin-bottom: 12px;
+}
+
+.word-meaning__urdu {
+  font-family: var(--font-urdu);
+  font-size: 15px;
+  max-width: 34ch;
+  margin-left: auto;
+  color: var(--color-black);
+  text-align: right;
+}

@@ -1,0 +1,48 @@
+.promo-card {
+  position: relative;
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  line-height: 0;
+  
+  &.sidebar-promo-card {
+    width: 100%;
+  }
+  
+  &.hero-promo-card {
+    width: 90%;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.promo-card__image {
+  width: 100%;
+  height: auto;
+}
+
+.promo-card__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+  transition: background-color var(--transition-base);
+}
+
+.promo-card__close:hover,
+.promo-card__close:focus-visible {
+  background-color: var(--color-gray);
+}
+
+.promo-card__close img {
+  width: 10px;
+  height: 10px;
+}

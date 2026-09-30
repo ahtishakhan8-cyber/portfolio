@@ -1,0 +1,139 @@
+.common-words {
+  padding-bottom: 72px;
+
+  @media (max-width: 1024px) {
+    padding-bottom: 56px;
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 48px;
+  }
+}
+
+.common-words__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.common-words__title {
+  font-size: 28px;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+}
+
+.common-words__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.common-words__controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+  transition: opacity var(--transition-base);
+}
+
+.common-words__controls button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.common-words__controls button:not(:disabled):hover {
+  opacity: 0.6;
+}
+
+.common-words__list {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  /* proximity, not mandatory: mandatory forces a snap point at all times, so
+     the track could never rest at scrollLeft 0 and sprang back. */
+  scroll-snap-type: x proximity;
+  /* Room for the card shadow, which a clipped scroll container would cut off. */
+  padding: 6px 4px 12px;
+  margin: -6px -4px -12px;
+  /* Matches the padding above so the first card snaps to exactly 0. */
+  scroll-padding-inline: 4px;
+  scrollbar-width: none;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+
+/* Hide the scrollbar but keep scrolling: the arrows are the visible control. */
+.common-words__list::-webkit-scrollbar {
+  display: none;
+}
+
+.word-card {
+  position: relative;
+  /* 4 cards per view: a quarter of the width minus the three 24px gaps. */
+  flex: 0 0 calc((100% - 50px) / 3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 145px;
+  scroll-snap-align: start;
+  background-color: var(--color-white);
+  border-bottom: 4px solid var(--color-primary);
+  border-radius: 2px;
+  box-shadow: var(--shadow-card);
+  padding: 20px 22px 18px;
+
+  @media (max-width: 1024px) {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+
+  @media (max-width: 768px) {
+    flex-basis: calc((100% - 16px) / 2);
+    min-height: 130px;
+  }
+
+  @media (max-width: 480px) {
+    flex-basis: 100%;
+  }
+}
+
+.word-card__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  display: flex;
+  padding: 4px;
+  transition: opacity var(--transition-base);
+}
+
+.word-card__close:hover,
+.word-card__close:focus-visible {
+  opacity: 0.6;
+}
+
+.word-card__close img {
+  width: 16px;
+  height: 16px;
+}
+
+.word-card__english {
+  font-size: 15px;
+  line-height: 1.4;
+  padding-right: 28px;
+}
+
+.word-card__urdu {
+  font-family: var(--font-urdu);
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: right;
+}
